@@ -6,7 +6,11 @@ AirBnB website clone(HBNB) that replicate core features and functionality. Proje
 ### Command Interpreter
 used for interacing  with HBNB website clone, using commands that users can perform variouse actions ie: creating bookings, managing user accounts etc.
 
+<<<<<<< HEAD
 #### How to start command interpreter
+=======
+# How to start command interpreter
+>>>>>>> ad552793412806b01957ecc4ead70eed0fa589c9
 clone project repository to local machine
 
 ##git clone git@github.com:davewrld/AirBnB_clone.git
