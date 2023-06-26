@@ -5,18 +5,19 @@ AirBnB website clone(HBNB) that replicate core features and functionality. Proje
 
 # Command Interpreter
 used for interacing  with HBNB website clone, using commands that users can perform variouse actions ie: creating bookings, managing user accounts etc
- [https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png]
+ ![File storage](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png)
+
 ## How to start command interpreter
 clone project repository to local machine
 
->> git clone git@github.com:davewrld/AirBnB_clone.git
+>>> git clone git@github.com:davewrld/AirBnB_clone.git
 
 repository contains packages with modeles that will be empoloyed in the application as objects, file storage class and test unnits in python.
 once all the dependencies are installed, start interpreter by running
-[Files in the repository](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230626T073952Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=880ae431174f8a86672945f824acc5e57a286468fae70b740d790a2174d7d158)
+![Files in the repository](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230626T073952Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=880ae431174f8a86672945f824acc5e57a286468fae70b740d790a2174d7d158)
 
 ## How to use command Interpreter 
 interact with cmd by entering commands and arguments. available commnands include
 
-[Basic commands](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230626T073952Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=880ae431174f8a86672945f824acc5e57a286468fae70b740d790a2174d7d158)
+![Basic commands](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230626T073952Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=880ae431174f8a86672945f824acc5e57a286468fae70b740d790a2174d7d158)
 
