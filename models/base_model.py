@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+from models.engine.file_storage import storage
 
 
 class BaseModel:
@@ -18,19 +19,28 @@ class BaseModel:
         to_dict(self) - Returns a dictionary of  __dict__ instance.
         __str__() - Returns string representation of the object.
     """
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Initializes BaseModel instance and assigns attributes.
+
+        Args:
+            **kwargs containing attribute names and values
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.utcnow()
-        self.updated_at = datetime.utcnow()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != '__class__':
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.utcnow()
+            self.updated_at = datetime.utcnow()
 
     def save(self):
         """
         Updates the update_at attribute with current datetime.
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
