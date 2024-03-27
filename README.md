@@ -12,7 +12,7 @@ Website name (hbnb)- not all features of the AirBnB website are implemented
 ### The Console
 
 This the a command-line interface (CLI) tool used to manage objects and the storage engine through text based commands.
-![Console](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240321%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240321T082222Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=16732394792a464cae7be794aac06e7292210d6b4c1aa483c67db636a11e0a9d)
+![Console](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240327T084316Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c883f159d4ec049a4adf29a497ac1ec5de79165a8d8a9e71ee5acd5885c3f06b)
 
 #### How to start and Use the command interpreter
 
