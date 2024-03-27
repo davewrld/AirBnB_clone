@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""
+Contains class BaseModel
+"""
+
 import uuid
 from datetime import datetime
-from models.engine.file_storage import storage
+import models
 
 
 class BaseModel:
@@ -28,7 +32,10 @@ class BaseModel:
         """
         if kwargs:
             for key, value in kwargs.items():
-                if key != '__class__':
+                if key == "__class__":
+                    continue
+                    elif key == "created_at" or key == "updated_at":
+                        value = datetime.fromisoformat(value)
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
@@ -40,15 +47,17 @@ class BaseModel:
         Updates the update_at attribute with current datetime.
         """
         self.updated_at = datetime.now()
-        storage.save()
+        modeels.storage.save()
 
     def to_dict(self):
         """
         Returns:
             A dictionary containning all instance attributes and their values.
         """
-        dict_output = self.__dict__.copy()
-        dict_output["__class__"] = self.__class__.__name__
+        dict_output = {}
+        for k, v in self.__dict__.items():
+            dict_output[k] = v
+        dict_output["__class__"] = type(self).__nam__
         dict_output["created_at"] = self.created_at.isoformat()
         dict_output["updated_at"] = self.updated_at.isoformat()
         return dict_output
@@ -59,4 +68,5 @@ class BaseModel:
             A string representation of the object.
             Containing class name, id and attrubute dictionary.
         """
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        classname = self.__class__.__name__
+        return "[{}] ({}) {}".format(classname, self.id, self.to_dict())
