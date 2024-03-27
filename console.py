@@ -8,15 +8,13 @@ import sys
 import shlex
 from models.base_model import BaseModel
 from models import storage
-
-
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
 
     """
     command line interpreter class
-
     supports commands
         quit - exit program.
         help - provide available commands
@@ -24,7 +22,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb)"
-  
+
     def do_quit(self, line):
         """
         Exits the program.
@@ -55,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance = globals()[class_name]()
         new_instance.save()
         print(new_instance.id)
-        
+
     def do_show(self, arg):
         """
         Prints the string representation of an instance
@@ -83,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         print(storage.all()[key])
-    
+
     def do_destroy(self, arg):
         """
         Deletes an instance based on the class name and id.
@@ -145,13 +143,13 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** class doesn't exist **")
                 return False
-    
+
     def do_update(self, arg):
         """
-        Updates an instance based on the class name and id 
-        by adding or updating attribute.
-        Usage: update <class name> <id> <attribute name>
-        "<attribute value>"
+        Update an instance based on the class name and id
+        by adding or updating an attribute.
+        Usage:
+        update <class name> <id> <attribute name> "<attribute value>"
         """
         args = shlex.split(arg)
         if not args:
@@ -169,8 +167,8 @@ class HBNBCommand(cmd.Cmd):
 
         class_name = args[0]
         obj_id = args[1]
-        attribute_name = args[2]
-        attribute_value = " ".join(args[3:])
+        attr_name = args[2]
+        attr_value = args[3]
 
         if class_name not in globals():
             print("** class doesn't exist **")
@@ -182,13 +180,8 @@ class HBNBCommand(cmd.Cmd):
             return
 
         instance = storage.all()[key]
-        try:
-            setattr(instance, attribute_name, attribute_value)
-            instance.save()
-        except Exception as e:
-            print(e)
-
-
+        setattr(instance, attr_name, attr_value)
+        instance.save()
 
     def help_help(self):
         """
@@ -204,5 +197,5 @@ class HBNBCommand(cmd.Cmd):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
