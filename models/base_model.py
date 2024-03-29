@@ -32,10 +32,9 @@ class BaseModel:
         """
         if kwargs:
             for key, value in kwargs.items():
-                if key == "__class__":
-                    continue
-                else if key == "created_at" or key == "updated_at":
-                    value = datetime.fromisoformat(value)
+                if key in ('created_at', 'updated_at'):
+                    setattr(self, key, datetime.isoformat(value))
+                else if key != '__class__':
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
@@ -57,7 +56,20 @@ class BaseModel:
         dict_output = {}
         for k, v in self.__dict__.items():
             dict_output[k] = v
-        dict_output["__class__"] = type(self).__nam__
+        dict_output["__class__"] = self.__class__.__name__
+        dict_output["created_at"] = self.created_at.isoformat()
+        dict_output["updated_at"] = self.updated_at.isoformat()
+        return dict_output
+
+    def __str__(self):
+        """
+        Returns:
+            A string representation of the object.
+            Containing class name, id and attrubute dictionary.
+        """
+        classname = self.__class__.__name__
+        return "[{}] ({}) {}".format(classname, self.id, self.to_dict())
+
         dict_output["created_at"] = self.created_at.isoformat()
         dict_output["updated_at"] = self.updated_at.isoformat()
         return dict_output
