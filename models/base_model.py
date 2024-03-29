@@ -5,7 +5,7 @@ Contains class BaseModel
 
 import uuid
 from datetime import datetime
-import models
+from models.engine.file_storage import storage
 
 
 class BaseModel:
@@ -46,7 +46,7 @@ class BaseModel:
         Updates the update_at attribute with current datetime.
         """
         self.updated_at = datetime.now()
-        modeels.storage.save()
+        storage.save()
 
     def to_dict(self):
         """
@@ -57,19 +57,6 @@ class BaseModel:
         for k, v in self.__dict__.items():
             dict_output[k] = v
         dict_output["__class__"] = self.__class__.__name__
-        dict_output["created_at"] = self.created_at.isoformat()
-        dict_output["updated_at"] = self.updated_at.isoformat()
-        return dict_output
-
-    def __str__(self):
-        """
-        Returns:
-            A string representation of the object.
-            Containing class name, id and attrubute dictionary.
-        """
-        classname = self.__class__.__name__
-        return "[{}] ({}) {}".format(classname, self.id, self.to_dict())
-
         dict_output["created_at"] = self.created_at.isoformat()
         dict_output["updated_at"] = self.updated_at.isoformat()
         return dict_output
